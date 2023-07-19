@@ -1,5 +1,11 @@
 import { LIST_PRODUCTS } from "../data/list_products.js";
-export let setListProducts = (arg) => {
+export const setListProducts = (arg) => {
+    if (arg.type == "---------------------") {
+        arg.select.setAttribute("disabled", "");
+    }
+    else {
+        arg.select.removeAttribute("disabled");
+    }
     arg.select.innerHTML = "";
     let listProducts = [];
     arg.list = LIST_PRODUCTS;
@@ -18,10 +24,15 @@ export let setListProducts = (arg) => {
             break;
         case "Pesce":
             listProducts = arg.list.Pesce;
+            console.log(arg.list.Pesce);
+            break;
+        default:
+            listProducts = ["---------------------"];
             break;
     }
     listProducts.forEach((el) => {
         let option = document.createElement("option");
+        option.setAttribute("value", el);
         option.innerText = el.charAt(0).toUpperCase() + el.slice(1);
         arg.select.appendChild(option);
     });

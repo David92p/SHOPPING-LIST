@@ -2,6 +2,7 @@ import { Products } from "../interfaces/products.js";
 
 export const LIST_PRODUCTS: Products = {
   Pasta_Riso: [
+    "---------------------",
     "spaghetti",
     "penne",
     "trenette",
@@ -30,6 +31,7 @@ export const LIST_PRODUCTS: Products = {
     "altro",
   ],
   Prodotti_Ortofrutticoli: [
+    "---------------------",
     "carciofi",
     "cavolfiori",
     "patate",
@@ -47,6 +49,7 @@ export const LIST_PRODUCTS: Products = {
     "altro",
   ],
   Latticini: [
+    "---------------------",
     "latte",
     "yogurt",
     "ricotta",
@@ -60,6 +63,7 @@ export const LIST_PRODUCTS: Products = {
     "altro",
   ],
   Carne_Affettati: [
+    "---------------------",
     "bistecca di manzo",
     "fettine di vitello",
     "petto di pollo",
@@ -75,6 +79,7 @@ export const LIST_PRODUCTS: Products = {
     "altro",
   ],
   Pesce: [
+    "---------------------",
     "orata",
     "branzino",
     "gamberetti",

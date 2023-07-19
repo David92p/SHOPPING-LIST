@@ -3,7 +3,7 @@ export const setListMeasures = (arg) => {
     arg.select.innerHTML = "";
     let listMeasures = [];
     arg.list = LIST_MEASURES;
-    if (arg.type != "Latte") {
+    if (arg.type != "Latte" && arg.type != "altro") {
         listMeasures = ["g", "kg", "Pz"];
         listMeasures.forEach((el) => {
             let option = document.createElement("option");

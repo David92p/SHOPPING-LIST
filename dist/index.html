@@ -17,9 +17,7 @@
           <div class="first-input">
             <label>Tipologia:</label>
             <select id="tipologia">
-              <option value="" selected disabled hidden>
-                Seleziona prodotto
-              </option>
+              <option value="">Seleziona prodotto</option>
               <option value="Pasta - Riso">Pasta - Riso</option>
               <option value="Prodotti Ortofrutticoli">
                 Prodotti Ortofrutticoli
@@ -41,16 +39,16 @@
             </select>
 
             <label>Prodotto:</label>
-            <select id="prodotto">
+            <select id="prodotto" disabled>
               <option value="">Seleziona Prodotto</option>
             </select>
           </div>
 
           <div class="second-input">
             <label>Quantità:</label>
-            <input type="number" value="" min="0" id="quantita" />
-            <select id="quantityType">
-              <option value="">"- - -"</option>
+            <input type="number" value="" min="0" id="quantita" disabled />
+            <select id="quantityType" disabled>
+              <option value="">- - -</option>
               <!-- <option value="g">grammi</option>
               <option value="Kg">kilogrammi</option>
               <option value="ml">millilitri</option>
@@ -64,6 +62,7 @@
               rows="1"
               maxlength="45"
               placeholder="Note sul prodotto ..."
+              disabled
             ></textarea>
           </div>
         </div>
@@ -71,7 +70,8 @@
           <span>INSERISCI</span>
         </button>
       </form>
-      <table class="table">
+      <table>
+        <h3>DOPPIO CLICK PER I PRODOTTI INSERITI NEL CARRELLO</h3>
         <thead>
           <tr>
             <th>Tipologia</th>
@@ -81,6 +81,30 @@
           </tr>
         </thead>
         <tfoot>
+          <tr>
+            <td>Pane e Pasta</td>
+            <td>Spaghetti Barilla</td>
+            <td>1 - kg</td>
+            <td>ssssssssssssssssssssssssssssssssssssssss</td>
+          </tr>
+          <tr>
+            <td>Pane e Pasta</td>
+            <td>Spaghetti Barilla</td>
+            <td>1 - kg</td>
+            <td>ssssssssssssssssssssssssssssssssssssssss</td>
+          </tr>
+          <tr>
+            <td>Pane e Pasta</td>
+            <td>Spaghetti Barilla</td>
+            <td>1 - kg</td>
+            <td>ssssssssssssssssssssssssssssssssssssssss</td>
+          </tr>
+          <tr>
+            <td>Pane e Pasta</td>
+            <td>Spaghetti Barilla</td>
+            <td>1 - kg</td>
+            <td>ssssssssssssssssssssssssssssssssssssssss</td>
+          </tr>
           <tr>
             <td>Pane e Pasta</td>
             <td>Spaghetti Barilla</td>

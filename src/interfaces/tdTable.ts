@@ -1,7 +1,7 @@
 export interface TdTable {
-  typology: HTMLSelectElement;
-  products: HTMLSelectElement;
-  quantity: HTMLInputElement;
-  quantityType: HTMLSelectElement;
-  textArea: HTMLTextAreaElement;
+  typology: string;
+  products: string;
+  quantity: number;
+  quantityType: string;
+  textArea: string;
 }

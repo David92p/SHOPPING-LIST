@@ -2,16 +2,26 @@ import { LIST_MEASURES } from "./data/list_measures.js";
 import { LIST_PRODUCTS } from "./data/list_products.js";
 import { setListMeasures } from "./functions/setListMeasures.js";
 import { setListProducts } from "./functions/setListProducts.js";
-import { setTdTable } from "./functions/setTdTable.js";
 const form = document.querySelector("form");
 const typology = document.querySelector("#tipologia");
-const products = document.querySelector("#prodotto");
-const quantity = document.querySelector("#quantita");
+const products = document.querySelector("#product");
+const quantity = document.querySelector("#quantity");
 const quantityType = document.querySelector("#quantityType");
 const textArea = document.querySelector("textarea");
 const btn = document.querySelector("button");
 typology.addEventListener("change", (e) => {
     e.preventDefault();
+    if (typology.value == "Seleziona prodotto") {
+        products.setAttribute("disabled", "");
+        products.classList.add("not-allowed");
+        quantity.valueAsNumber = 0;
+        quantityType.value = "";
+        textArea.value = "";
+    }
+    else {
+        products.removeAttribute("disabled");
+        products.classList.remove("not-allowed");
+    }
     quantity.setAttribute("disabled", "");
     quantityType.setAttribute("disabled", "");
     textArea.setAttribute("disabled", "");
@@ -20,20 +30,28 @@ typology.addEventListener("change", (e) => {
         select: products,
         list: LIST_PRODUCTS,
     });
-    console.log(products.value);
 });
 products.addEventListener("change", (e) => {
     e.preventDefault();
-    if (products.value == "---------------------") {
+    if (products.value == "Seleziona prodotto") {
         quantity.setAttribute("disabled", "");
         quantityType.setAttribute("disabled", "");
         textArea.setAttribute("disabled", "");
+        quantity.classList.add("not-allowed");
+        quantityType.classList.add("not-allowed");
+        textArea.classList.add("not-allowed");
     }
     else {
         quantity.removeAttribute("disabled");
         quantityType.removeAttribute("disabled");
         textArea.removeAttribute("disabled");
+        quantity.classList.remove("not-allowed");
+        quantityType.classList.remove("not-allowed");
+        textArea.classList.remove("not-allowed");
     }
+    quantity.valueAsNumber = 0;
+    quantityType.value = "";
+    textArea.value = "";
     setListMeasures({
         type: products.value,
         select: quantityType,
@@ -42,13 +60,15 @@ products.addEventListener("change", (e) => {
 });
 btn.addEventListener("click", (e) => {
     e.preventDefault();
-    setTdTable({
-        typology,
-        products,
-        quantity,
-        quantityType,
-        textArea,
-    });
+    //   setTdTable({
+    //     typology,
+    //     products,
+    //     quantity,
+    //     quantityType,
+    //     textArea,
+    //   });
+    //   typology.value;
+    //   products.value;
     //   console.log(
     //     typology.value,
     //     products.value,

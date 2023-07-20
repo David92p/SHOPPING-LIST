@@ -1,11 +1,5 @@
 import { LIST_PRODUCTS } from "../data/list_products.js";
 export const setListProducts = (arg) => {
-    if (arg.type == "---------------------") {
-        arg.select.setAttribute("disabled", "");
-    }
-    else {
-        arg.select.removeAttribute("disabled");
-    }
     arg.select.innerHTML = "";
     let listProducts = [];
     arg.list = LIST_PRODUCTS;
@@ -24,10 +18,9 @@ export const setListProducts = (arg) => {
             break;
         case "Pesce":
             listProducts = arg.list.Pesce;
-            console.log(arg.list.Pesce);
             break;
         default:
-            listProducts = ["---------------------"];
+            listProducts = ["Seleziona prodotto"];
             break;
     }
     listProducts.forEach((el) => {

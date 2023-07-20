@@ -1,6 +1,6 @@
 export const LIST_PRODUCTS = {
     Pasta_Riso: [
-        "---------------------",
+        "Seleziona prodotto",
         "spaghetti",
         "penne",
         "trenette",
@@ -29,7 +29,7 @@ export const LIST_PRODUCTS = {
         "altro",
     ],
     Prodotti_Ortofrutticoli: [
-        "---------------------",
+        "Seleziona prodotto",
         "carciofi",
         "cavolfiori",
         "patate",
@@ -47,7 +47,7 @@ export const LIST_PRODUCTS = {
         "altro",
     ],
     Latticini: [
-        "---------------------",
+        "Seleziona prodotto",
         "latte",
         "yogurt",
         "ricotta",
@@ -61,7 +61,7 @@ export const LIST_PRODUCTS = {
         "altro",
     ],
     Carne_Affettati: [
-        "---------------------",
+        "Seleziona prodotto",
         "bistecca di manzo",
         "fettine di vitello",
         "petto di pollo",
@@ -77,7 +77,7 @@ export const LIST_PRODUCTS = {
         "altro",
     ],
     Pesce: [
-        "---------------------",
+        "Seleziona prodotto",
         "orata",
         "branzino",
         "gamberetti",

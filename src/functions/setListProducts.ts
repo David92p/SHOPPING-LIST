@@ -2,12 +2,6 @@ import { LIST_PRODUCTS } from "../data/list_products.js";
 import { Form } from "../interfaces/form.js";
 
 export const setListProducts = (arg: Form): void => {
-  if (arg.type == "---------------------") {
-    arg.select.setAttribute("disabled", "");
-  } else {
-    arg.select.removeAttribute("disabled");
-  }
-
   arg.select.innerHTML = "";
   let listProducts: string[] = [];
   arg.list = LIST_PRODUCTS;
@@ -26,11 +20,9 @@ export const setListProducts = (arg: Form): void => {
       break;
     case "Pesce":
       listProducts = arg.list.Pesce;
-
-      console.log(arg.list.Pesce);
       break;
     default:
-      listProducts = ["---------------------"];
+      listProducts = ["Seleziona prodotto"];
       break;
   }
 

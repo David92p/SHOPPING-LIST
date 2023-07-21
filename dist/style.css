@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@1,200&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  background-color: #38ef7d;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  font-size: 2.3em;
+  padding: 40px 0;
+  border-bottom: 2px solid black;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 80%;
+}
+
+.first {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+}
+
+.first label {
+  margin: 10px 30px;
+}
+
+.typology {
+  margin: 10px 30px;
+  font-size: 0.6em;
+  border-radius: 6px;
+  border: 1px solid rgb(0, 0, 0, 0.6);
+  background-color: white;
+}
+
+.typology option {
+  background-color: rgb(56, 239, 125, 0.2);
+  font-size: 1.1em;
+  font-weight: 200;
+}
+
+.second {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+
+.second input {
+  margin: 10px 30px;
+  font-size: 0.6em;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid rgb(0, 0, 0, 0.6);
+}
+.second select {
+  margin: 0px 30px;
+  font-size: 0.6em;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid rgb(0, 0, 0, 0.6);
+}
+
+textarea {
+  margin: 10px 30px;
+  resize: none;
+  padding: 5px 10px;
+  font-size: 0.8em;
+  border-radius: 6px;
+  border: 1px solid rgb(0, 0, 0, 0.6);
+}
+
+textarea::placeholder {
+  text-align: left;
+  font-size: 0.8em;
+}
+
+button {
+  position: relative;
+  margin: 0;
+  padding: 17px 35px;
+  outline: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 1px solid rgba(22, 76, 167, 0.6);
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #38ef7d;
+  font-size: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+button span {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.7px;
+}
+
+button:hover {
+  animation: rotate624 0.7s ease-in-out both;
+}
+
+button:hover span {
+  animation: storm1261 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+.not-allowed {
+  cursor: not-allowed;
+  background-color: rgb(0, 0, 0, 0.1);
+}
+
+@keyframes rotate624 {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes storm1261 {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+
+.btn-shine {
+  border: 1px solid;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-shine span {
+  z-index: 20;
+}
+
+.btn-shine:after {
+  background: #38ef7d;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: 0.4;
+  position: absolute;
+  top: -50px;
+  transform: rotate(35deg);
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  width: 50px;
+  z-index: -10;
+}
+
+.btn-shine:hover:after {
+  left: 120%;
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.container-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border: 1px solid red;
+  width: 100%;
+}

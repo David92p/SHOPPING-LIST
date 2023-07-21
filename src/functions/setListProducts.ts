@@ -21,9 +21,6 @@ export const setListProducts = (arg: Form): void => {
     case "Pesce":
       listProducts = arg.list.Pesce;
       break;
-    default:
-      listProducts = ["Seleziona prodotto"];
-      break;
   }
 
   listProducts.forEach((el) => {

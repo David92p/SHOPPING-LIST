@@ -19,9 +19,6 @@ export const setListProducts = (arg) => {
         case "Pesce":
             listProducts = arg.list.Pesce;
             break;
-        default:
-            listProducts = ["Seleziona prodotto"];
-            break;
     }
     listProducts.forEach((el) => {
         let option = document.createElement("option");

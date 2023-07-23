@@ -29,15 +29,14 @@ form {
   align-items: center;
   height: 350px;
   font-size: 2.3em;
-  padding: 40px 0;
   border-bottom: 2px solid black;
 }
 
 .input-container {
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  height: 80%;
+  height: 90%;
+  width: 100%;
 }
 
 .first {
@@ -45,6 +44,16 @@ form {
   justify-content: center;
   align-items: center;
   height: 40%;
+  position: relative;
+}
+
+.error-type {
+  position: absolute;
+  top:10px;
+  left: 35%;
+  font-size: 1.3rem;
+  color: red;
+  font-weight: bold;
 }
 
 .first label {
@@ -55,12 +64,14 @@ form {
   margin: 10px 30px;
   font-size: 0.6em;
   border-radius: 6px;
-  border: 1px solid rgb(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.6);
   background-color: white;
+  margin-bottom: 6px;
+  padding: 0 10px;
 }
 
 .typology option {
-  background-color: rgb(56, 239, 125, 0.2);
+  background-color: rgba(56, 239, 125, 0.2);
   font-size: 1.1em;
   font-weight: 200;
 }
@@ -77,14 +88,14 @@ form {
   font-size: 0.6em;
   padding: 5px;
   border-radius: 6px;
-  border: 1px solid rgb(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.6);
 }
 .second select {
   margin: 0px 30px;
   font-size: 0.6em;
   padding: 5px 10px;
   border-radius: 6px;
-  border: 1px solid rgb(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.6);
 }
 
 textarea {

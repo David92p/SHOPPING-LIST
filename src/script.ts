@@ -14,11 +14,18 @@ const quantityType = document.querySelector(
 const textArea = document.querySelector("textarea") as HTMLTextAreaElement;
 const btn = document.querySelector("button") as HTMLButtonElement;
 
+
+
 let valueTipology = typology.value;
 let valueProduct = products.value;
 
 typology.addEventListener("change", (e: Event) => {
   e.preventDefault();
+
+  // let span = document.querySelector(".error-type") as HTMLSpanElement
+  // span?.remove()
+  typology.style.border = "1px solid black"
+
   products.removeAttribute("disabled");
   products.classList.remove("not-allowed");
 
@@ -30,8 +37,9 @@ typology.addEventListener("change", (e: Event) => {
 
   textArea.removeAttribute("disabled");
   textArea.classList.remove("not-allowed");
+
   if (typology.value !== valueTipology) {
-    quantity.valueAsNumber = 0;
+    quantity.value = "";
     quantityType.value = "";
     textArea.value = "";
   }
@@ -52,7 +60,7 @@ products.addEventListener("change", (e: Event) => {
   e.preventDefault();
 
   if (valueProduct !== products.value) {
-    quantity.valueAsNumber = 0;
+    quantity.value = "";
     quantityType.value = "";
     textArea.value = "";
   }
@@ -64,14 +72,36 @@ products.addEventListener("change", (e: Event) => {
   });
 });
 
+quantity.addEventListener("change", (e: Event) => {
+  e.preventDefault()
+  quantity.style.border = "1px solid rgba(0, 0, 0, 0.6)"
+})
+
+quantityType.addEventListener("change", (e: Event) => {
+  e.preventDefault()
+  quantityType.style.border = "1px solid rgba(0, 0, 0, 0.6)"
+})
+
+
 btn.addEventListener("click", (e: Event) => {
   e.preventDefault();
+  setTdTable({
+    typology,
+    products,
+    quantity,
+    quantityType,
+    textArea,
+    // btn
+  })
+  console.log(quantityType.value);
+  
 
-  console.log(
-    typology.value,
-    products.value,
-    quantity.valueAsNumber,
-    quantityType.value,
-    textArea.value
-  );
+
+  // console.log(
+  //   typology.value,
+  //   products.value,
+  //   quantity.value,
+  //   quantityType.value,
+  //   textArea.value
+  // );
 });

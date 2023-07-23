@@ -7,11 +7,11 @@ export const setListMeasures = (arg: Form): void => {
   arg.list = LIST_MEASURES;
 
   if (arg.type != "latte" && arg.type != "altro") {
-    listMeasures = ["g", "kg", "Pz"];
+    listMeasures = ["---", "g", "kg", "Pz"];
   } else if (arg.type === "latte") {
-    listMeasures = ["ml", "L"];
+    listMeasures = ["---", "ml", "L"];
   } else if (arg.type == "altro") {
-    listMeasures = ["g", "kg", "Pz", "ml", "L"];
+    listMeasures = ["---", "g", "kg", "Pz", "ml", "L"];
   }
   listMeasures.forEach((el) => {
     let option: HTMLOptionElement = document.createElement("option");

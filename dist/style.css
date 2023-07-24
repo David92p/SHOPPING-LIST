@@ -10,7 +10,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 100vw;
 }
 
 .title {
@@ -29,7 +28,8 @@ form {
   align-items: center;
   height: 350px;
   font-size: 2.3em;
-  border-bottom: 2px solid black;
+  padding-bottom: 20px;
+  background-color: azure;
 }
 
 .input-container {
@@ -44,17 +44,17 @@ form {
   justify-content: center;
   align-items: center;
   height: 40%;
-  position: relative;
+  /* position: relative; */
 }
 
-.error-type {
+/* .error-type {
   position: absolute;
-  top:10px;
+  top: 10px;
   left: 35%;
   font-size: 1.3rem;
   color: red;
   font-weight: bold;
-}
+} */
 
 .first label {
   margin: 10px 30px;
@@ -112,38 +112,39 @@ textarea::placeholder {
   font-size: 0.8em;
 }
 
-button {
-  position: relative;
+.submit {
   margin: 0;
   padding: 17px 35px;
   outline: none;
+  border: none;
+  color: black;
+  font-weight: 800;
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   text-transform: uppercase;
-  border: 1px solid rgba(22, 76, 167, 0.6);
+  letter-spacing: 2px;
   border-radius: 10px;
-  color: #ffffff;
   background-color: #38ef7d;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
 }
-
-button span {
+/* 
+.submit span {
   color: #000000;
   font-size: 14px;
   font-weight: 900;
   letter-spacing: 0.7px;
-}
+} */
 
-button:hover {
+.submit:hover {
   animation: rotate624 0.7s ease-in-out both;
 }
 
-button:hover span {
+.submit:hover span {
   animation: storm1261 0.7s ease-in-out both;
   animation-delay: 0.06s;
 }
@@ -197,40 +198,89 @@ button:hover span {
   }
 }
 
-.btn-shine {
-  border: 1px solid;
-  overflow: hidden;
-  position: relative;
+.table {
+  padding: 60px;
+  background-color: azure;
 }
 
-.btn-shine span {
-  z-index: 20;
-}
-
-.btn-shine:after {
-  background: #38ef7d;
-  content: "";
-  height: 155px;
-  left: -75px;
-  opacity: 0.4;
-  position: absolute;
-  top: -50px;
-  transform: rotate(35deg);
-  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
-  width: 50px;
-  z-index: -10;
-}
-
-.btn-shine:hover:after {
-  left: 120%;
-  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.container-list {
+.header-table {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: rgba(56, 239, 125);
+}
 
-  border: 1px solid red;
-  width: 100%;
+.header-table h2 {
+  color: #000000;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.header-table img {
+  height: 40px;
+  width: 40px;
+  margin-left: 20px;
+  margin-bottom: -10px;
+}
+
+.reset-btn {
+  background: #ff4742;
+  border: 3px solid #ffffff;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  letter-spacing: 2px;
+}
+
+.reset-btn:hover,
+.reset-btn:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #ff4742;
+}
+
+thead tr th {
+  font-size: 2rem;
+  background-color: #38ef7d;
+  border-radius: 10px;
+  padding: 10px;
+  letter-spacing: 2px;
+}
+
+td {
+  padding: 20px;
+  font-size: 1.7rem;
+  font-weight: 550;
+  text-align: center;
+}
+
+td button {
+  border: none;
+  height: 50px;
+  width: 50px;
+  margin: 20px;
+}
+
+td img {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
 }

@@ -15,7 +15,7 @@
       <!-- FORM CONTAINER  -->
       <form>
         <div class="input-container">
-          <div class="first"> 
+          <div class="first">
             <label>Tipologia:</label>
             <!-- <span class="error-type">Seleziona una tipologia</span> -->
             <select id="typology" class="typology">
@@ -39,7 +39,7 @@
               <option value="Amici Animali">Amici Animali</option>
               <option value="Varie">Varie</option> -->
             </select>
-            
+
             <label>Prodotto:</label>
             <select id="product" class="typology not-allowed" disabled>
               <option value="" selected disabled>Seleziona prodotto</option>
@@ -55,6 +55,7 @@
               id="quantity"
               class="not-allowed"
               placeholder="Inserisci quantità"
+              maxlength="4"
               disabled
             />
             <select id="quantityType" class="not-allowed" disabled>
@@ -77,16 +78,19 @@
             ></textarea>
           </div>
         </div>
-        <button>
-          <span>INSERISCI</span>
-        </button>
+        <button class="submit">INSERISCI</button>
       </form>
-
 
       <!-- MAIN SECTION  -->
 
-
       <table class="table">
+        <div class="header-table">
+          <h2 class="title-list">
+            Carrello<img src="./utilities/carrello.png" alt="" />
+          </h2>
+          <button class="reset-btn" role="button">Reset</button>
+        </div>
+
         <thead>
           <tr>
             <th>Tipologia</th>
@@ -101,6 +105,10 @@
             <td>Spaghetti Barilla</td>
             <td>1 - kg</td>
             <td>ssssssssssssssssssssssssssssssssssssssss</td>
+            <td>
+              <button><img src="./utilities/check.png" alt="check" /></button>
+              <button><img src="./utilities/delete.png" alt="check" /></button>
+            </td>
           </tr>
         </tfoot>
       </table>

@@ -12,9 +12,8 @@ const quantityType = document.querySelector(
   "#quantityType"
 ) as HTMLSelectElement;
 const textArea = document.querySelector("textarea") as HTMLTextAreaElement;
+const table = document.querySelector("table") as HTMLTableElement;
 const btn = document.querySelector("button") as HTMLButtonElement;
-
-
 
 let valueTipology = typology.value;
 let valueProduct = products.value;
@@ -24,7 +23,7 @@ typology.addEventListener("change", (e: Event) => {
 
   // let span = document.querySelector(".error-type") as HTMLSpanElement
   // span?.remove()
-  typology.style.border = "1px solid black"
+  typology.style.border = "1px solid black";
 
   products.removeAttribute("disabled");
   products.classList.remove("not-allowed");
@@ -73,15 +72,14 @@ products.addEventListener("change", (e: Event) => {
 });
 
 quantity.addEventListener("change", (e: Event) => {
-  e.preventDefault()
-  quantity.style.border = "1px solid rgba(0, 0, 0, 0.6)"
-})
+  e.preventDefault();
+  quantity.style.border = "1px solid rgba(0, 0, 0, 0.6)";
+});
 
 quantityType.addEventListener("change", (e: Event) => {
-  e.preventDefault()
-  quantityType.style.border = "1px solid rgba(0, 0, 0, 0.6)"
-})
-
+  e.preventDefault();
+  quantityType.style.border = "1px solid rgba(0, 0, 0, 0.6)";
+});
 
 btn.addEventListener("click", (e: Event) => {
   e.preventDefault();
@@ -91,17 +89,11 @@ btn.addEventListener("click", (e: Event) => {
     quantity,
     quantityType,
     textArea,
-    // btn
-  })
-  console.log(quantityType.value);
-  
-
-
-  // console.log(
-  //   typology.value,
-  //   products.value,
-  //   quantity.value,
-  //   quantityType.value,
-  //   textArea.value
-  // );
+    table,
+  });
+  typology.value = "";
+  products.value = "";
+  quantity.value = "";
+  quantityType.value = "";
+  textArea.value = "";
 });

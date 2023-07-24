@@ -9,6 +9,7 @@ const products = document.querySelector("#product");
 const quantity = document.querySelector("#quantity");
 const quantityType = document.querySelector("#quantityType");
 const textArea = document.querySelector("textarea");
+const table = document.querySelector("table");
 const btn = document.querySelector("button");
 let valueTipology = typology.value;
 let valueProduct = products.value;
@@ -70,14 +71,11 @@ btn.addEventListener("click", (e) => {
         quantity,
         quantityType,
         textArea,
-        // btn
+        table,
     });
-    console.log(quantityType.value);
-    // console.log(
-    //   typology.value,
-    //   products.value,
-    //   quantity.value,
-    //   quantityType.value,
-    //   textArea.value
-    // );
+    typology.value = "";
+    products.value = "";
+    quantity.value = "";
+    quantityType.value = "";
+    textArea.value = "";
 });

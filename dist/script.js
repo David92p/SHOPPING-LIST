@@ -10,13 +10,17 @@ const quantity = document.querySelector("#quantity");
 const quantityType = document.querySelector("#quantityType");
 const textArea = document.querySelector("textarea");
 const table = document.querySelector("table");
-const btn = document.querySelector("button");
+const btnSubmit = document.querySelector(".submit");
+const btnReset = document.querySelector(".reset-btn");
+const tFoot = document.querySelector("tfoot");
+// const checkButton = document.querySelector(".checkButton") as HTMLButtonElement;
+// const deleteButton = document.querySelector(
+//   "#deleteButton"
+// ) as HTMLButtonElement;
 let valueTipology = typology.value;
 let valueProduct = products.value;
 typology.addEventListener("change", (e) => {
     e.preventDefault();
-    // let span = document.querySelector(".error-type") as HTMLSpanElement
-    // span?.remove()
     typology.style.border = "1px solid black";
     products.removeAttribute("disabled");
     products.classList.remove("not-allowed");
@@ -55,6 +59,10 @@ products.addEventListener("change", (e) => {
         list: LIST_MEASURES,
     });
 });
+quantity.oninput = () => {
+    if (quantity.value.length > quantity.maxLength)
+        quantity.value = quantity.value.slice(0, quantity.maxLength);
+};
 quantity.addEventListener("change", (e) => {
     e.preventDefault();
     quantity.style.border = "1px solid rgba(0, 0, 0, 0.6)";
@@ -63,7 +71,7 @@ quantityType.addEventListener("change", (e) => {
     e.preventDefault();
     quantityType.style.border = "1px solid rgba(0, 0, 0, 0.6)";
 });
-btn.addEventListener("click", (e) => {
+btnSubmit.addEventListener("click", (e) => {
     e.preventDefault();
     setTdTable({
         typology,
@@ -73,9 +81,33 @@ btn.addEventListener("click", (e) => {
         textArea,
         table,
     });
-    typology.value = "";
-    products.value = "";
-    quantity.value = "";
-    quantityType.value = "";
-    textArea.value = "";
+    if (!quantity.value)
+        quantity.value = "";
+    else if (quantityType.value == "---")
+        quantityType.value = "";
+    else {
+        typology.value = "";
+        products.value = "";
+        quantity.value = "";
+        quantityType.value = "";
+        textArea.value = "";
+        products.classList.add("not-allowed");
+        products.setAttribute("disabled", "");
+        quantity.classList.add("not-allowed");
+        quantity.setAttribute("disabled", "");
+        quantityType.classList.add("not-allowed");
+        quantityType.setAttribute("disabled", "");
+        textArea.classList.add("not-allowed");
+        textArea.setAttribute("disabled", "");
+    }
 });
+btnReset.addEventListener("click", (e) => {
+    e.preventDefault();
+    while (tFoot === null || tFoot === void 0 ? void 0 : tFoot.firstChild)
+        tFoot.removeChild(tFoot.firstChild);
+    console.log(tFoot);
+});
+// checkButton?.addEventListener("click", (e: Event) => {
+//   e.preventDefault();
+//   console.log("stampato");
+// });

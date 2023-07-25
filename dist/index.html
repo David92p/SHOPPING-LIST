@@ -49,29 +49,26 @@
           <div class="second">
             <label>Quantità:</label>
             <input
-              type="number"
-              value=""
-              min="0"
               id="quantity"
+              type="number"
+              min="0"
+              max="9999"
+              maxlength="4"
               class="not-allowed"
               placeholder="Inserisci quantità"
-              maxlength="4"
               disabled
             />
             <select id="quantityType" class="not-allowed" disabled>
               <option value="">"- - -"</option>
-              <!-- <option value="g">grammi</option>
-              <option value="Kg">kilogrammi</option>
-              <option value="ml">millilitri</option>
-              <option value="l">litri</option>
-              <option value="Pz">pz</option> -->
             </select>
 
             <label>Note:</label>
             <textarea
+              type="nummber"
               cols="45"
               rows="1"
-              maxlength="45"
+              minlength="0"
+              maxlength="35"
               placeholder="Note sul prodotto ..."
               class="not-allowed"
               disabled
@@ -99,18 +96,7 @@
             <th>Note:</th>
           </tr>
         </thead>
-        <tfoot>
-          <tr>
-            <td>Pane e Pasta</td>
-            <td>Spaghetti Barilla</td>
-            <td>1 - kg</td>
-            <td>ssssssssssssssssssssssssssssssssssssssss</td>
-            <td>
-              <button><img src="./utilities/check.png" alt="check" /></button>
-              <button><img src="./utilities/delete.png" alt="check" /></button>
-            </td>
-          </tr>
-        </tfoot>
+        <tfoot></tfoot>
       </table>
     </div>
 

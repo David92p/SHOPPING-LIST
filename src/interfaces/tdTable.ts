@@ -5,5 +5,4 @@ export interface TdTable {
   quantityType: HTMLSelectElement;
   textArea: HTMLTextAreaElement;
   table: HTMLTableElement;
-  // btn: HTMLButtonElement
 }

@@ -6,13 +6,11 @@ export const setTdTable = (arg: TdTable) => {
     alert("Inrerisci una tipologia di prodotto per proseguire");
   } else {
     if (!arg.quantity.value || arg.quantityType.value == "---") {
-      alert("Inserisci i dati mancanti");
+      alert("Modifica i campi richiesti");
       if (!arg.quantity.value) arg.quantity.style.border = "3px solid red";
       if (arg.quantityType.value == "---")
         arg.quantityType.style.border = "3px solid red";
     } else {
-      console.log(arg);
-
       let tr = document.createElement("tr");
 
       let tdTipology = document.createElement("td");
@@ -20,12 +18,19 @@ export const setTdTable = (arg: TdTable) => {
         arg.typology.value.charAt(0).toUpperCase() +
         arg.typology.value.slice(1);
       let tdProduct = document.createElement("td");
-      tdProduct.innerText = arg.products.value;
+      tdProduct.innerText =
+        arg.products.value.charAt(0).toUpperCase() +
+        arg.products.value.slice(1);
       let tdQuantity = document.createElement("td");
       tdQuantity.innerText =
         arg.quantity.value + " - " + arg.quantityType.value;
       let tdNote = document.createElement("td");
-      tdNote.innerText = arg.textArea.value;
+      arg.textArea.value === ""
+        ? (tdNote.innerText = "Nessuna nota")
+        : (tdNote.innerText =
+            arg.textArea.value.charAt(0).toUpperCase() +
+            arg.textArea.value.slice(1));
+
       let tdButton = document.createElement("td");
 
       let checkButton = document.createElement("button") as HTMLButtonElement;

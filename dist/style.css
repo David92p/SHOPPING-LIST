@@ -85,6 +85,7 @@ form {
 
 .second input {
   margin: 10px 30px;
+  width: 200px;
   font-size: 0.6em;
   padding: 5px;
   border-radius: 6px;

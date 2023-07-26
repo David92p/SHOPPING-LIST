@@ -5,9 +5,14 @@ export const setTdTable = (arg: TdTable) => {
     arg.typology.style.border = "3px solid red";
     alert("Inrerisci una tipologia di prodotto per proseguire");
   } else {
-    if (!arg.quantity.value || arg.quantityType.value == "---") {
+    if (
+      !arg.quantity.value ||
+      arg.quantity.value == "0" ||
+      arg.quantityType.value == "---"
+    ) {
       alert("Modifica i campi richiesti");
-      if (!arg.quantity.value) arg.quantity.style.border = "3px solid red";
+      if (!arg.quantity.value || arg.quantity.value == "0")
+        arg.quantity.style.border = "3px solid red";
       if (arg.quantityType.value == "---")
         arg.quantityType.style.border = "3px solid red";
     } else {
@@ -34,16 +39,30 @@ export const setTdTable = (arg: TdTable) => {
       let tdButton = document.createElement("td");
 
       let checkButton = document.createElement("button") as HTMLButtonElement;
-      let checkImg = document.createElement("img") as HTMLImageElement;
-      checkImg.src = "./utilities/check.png";
-      checkButton.appendChild(checkImg);
-
       let deleteButton = document.createElement("button") as HTMLButtonElement;
+      let checkImg = document.createElement("img") as HTMLImageElement;
       let deleteImg = document.createElement("img") as HTMLImageElement;
+      checkImg.src = "./utilities/check.png";
       deleteImg.src = "./utilities/delete.png";
+
+      checkButton.appendChild(checkImg);
       deleteButton.appendChild(deleteImg);
       tdButton.appendChild(checkButton);
       tdButton.appendChild(deleteButton);
+
+      checkButton.addEventListener("click", (e: Event) => {
+        e.preventDefault();
+
+        tr.style.background == "azure"
+          ? (tr.style.backgroundImage =
+              "linear-gradient(to right, #38ef7d, #7eed74, #a7ea72, #c5e877, #dde581)")
+          : (tr.style.background = "azure");
+      });
+
+      deleteButton.addEventListener("click", (e: Event) => {
+        e.preventDefault();
+        tr.remove();
+      });
 
       tr.appendChild(tdTipology);
       tr.appendChild(tdProduct);
@@ -52,6 +71,8 @@ export const setTdTable = (arg: TdTable) => {
       tr.appendChild(tdButton);
 
       arg.table.tFoot?.appendChild(tr);
+
+      ////////////////////
     }
   }
 };

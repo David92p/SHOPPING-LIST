@@ -5,9 +5,11 @@ export const setTdTable = (arg) => {
         alert("Inrerisci una tipologia di prodotto per proseguire");
     }
     else {
-        if (!arg.quantity.value || arg.quantityType.value == "---") {
+        if (!arg.quantity.value ||
+            arg.quantity.value == "0" ||
+            arg.quantityType.value == "---") {
             alert("Modifica i campi richiesti");
-            if (!arg.quantity.value)
+            if (!arg.quantity.value || arg.quantity.value == "0")
                 arg.quantity.style.border = "3px solid red";
             if (arg.quantityType.value == "---")
                 arg.quantityType.style.border = "3px solid red";
@@ -33,21 +35,33 @@ export const setTdTable = (arg) => {
                         arg.textArea.value.slice(1));
             let tdButton = document.createElement("td");
             let checkButton = document.createElement("button");
-            let checkImg = document.createElement("img");
-            checkImg.src = "./utilities/check.png";
-            checkButton.appendChild(checkImg);
             let deleteButton = document.createElement("button");
+            let checkImg = document.createElement("img");
             let deleteImg = document.createElement("img");
+            checkImg.src = "./utilities/check.png";
             deleteImg.src = "./utilities/delete.png";
+            checkButton.appendChild(checkImg);
             deleteButton.appendChild(deleteImg);
             tdButton.appendChild(checkButton);
             tdButton.appendChild(deleteButton);
+            checkButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                tr.style.background == "azure"
+                    ? (tr.style.backgroundImage =
+                        "linear-gradient(to right, #38ef7d, #7eed74, #a7ea72, #c5e877, #dde581)")
+                    : (tr.style.background = "azure");
+            });
+            deleteButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                tr.remove();
+            });
             tr.appendChild(tdTipology);
             tr.appendChild(tdProduct);
             tr.appendChild(tdQuantity);
             tr.appendChild(tdNote);
             tr.appendChild(tdButton);
             (_a = arg.table.tFoot) === null || _a === void 0 ? void 0 : _a.appendChild(tr);
+            ////////////////////
         }
     }
 };

@@ -3,7 +3,6 @@ import { LIST_PRODUCTS } from "./data/list_products.js";
 import { setListMeasures } from "./functions/setListMeasures.js";
 import { setListProducts } from "./functions/setListProducts.js";
 import { setTdTable } from "./functions/setTdTable.js";
-const form = document.querySelector("form");
 const typology = document.querySelector("#typology");
 const products = document.querySelector("#product");
 const quantity = document.querySelector("#quantity");
@@ -13,10 +12,6 @@ const table = document.querySelector("table");
 const btnSubmit = document.querySelector(".submit");
 const btnReset = document.querySelector(".reset-btn");
 const tFoot = document.querySelector("tfoot");
-// const checkButton = document.querySelector(".checkButton") as HTMLButtonElement;
-// const deleteButton = document.querySelector(
-//   "#deleteButton"
-// ) as HTMLButtonElement;
 let valueTipology = typology.value;
 let valueProduct = products.value;
 typology.addEventListener("change", (e) => {
@@ -81,7 +76,7 @@ btnSubmit.addEventListener("click", (e) => {
         textArea,
         table,
     });
-    if (!quantity.value)
+    if (!quantity.value || quantity.value == "0")
         quantity.value = "";
     else if (quantityType.value == "---")
         quantityType.value = "";
@@ -107,7 +102,3 @@ btnReset.addEventListener("click", (e) => {
         tFoot.removeChild(tFoot.firstChild);
     console.log(tFoot);
 });
-// checkButton?.addEventListener("click", (e: Event) => {
-//   e.preventDefault();
-//   console.log("stampato");
-// });
